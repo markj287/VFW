@@ -1,11 +1,59 @@
 <!DOCTYPE html>
+<! -- Mark Johnson Visual Frameworks 01 Project 1 -->
 <html>
 	<head>
 	
+		<meta charset="UTF-8" />
+		<meta name="description" content="A sleek note taking app" />
+		<meta name="keywords" content="notes, bud, ios, android" />
+		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+		<meta name="robots" content="noindex, nofollow" />
+		<link href="css/main.css" type="text/css" rel="stylesheet" /><!-- css link for project 2 -->
+		<title>New Note</title>
+		
 	</head>
 
 <body>
-
+	<div id="wrapper">
+		<div id="content">
+		<header>
+			<h1>New Note</h1>
+		</header>
+			<form>
+			<fieldset>
+				<legend>Add Information Below</legend>
+				<ul>
+					<li><label for="notetitle">Title</label><input type="text" id="notetitle" /></li>
+					<li><label for="noteinfo">Note</label><textarea id="noteinfo"></textarea></li>
+					<li><input type="hidden" value="true" /></li>
+					<li><label for="date">Date</label><input type="date" id="date" /></li>
+					<li><label for="items">Number of items</label><input type="range" id="items" /></li>
+					<li><label for="attach">Attach a File</label><input type="file" id="attach" /></li>
+						<li>Favorite Note
+						<ul>
+							<li><input type="radio" value="Yes" id="male" name="Yes" /><label for="yes" >Yes</label></li>
+							<li><input type="radio" value="No" id="female" name="No" /><label for="no" >No</label></li>
+						</ul>
+						</li>
+				</ul>
+				<li><label for="" >Category</label>
+				<select id="category">
+					<optgroup label="Options">
+						<option value="Walk">Grocery</option>
+						<option value="Bike">Fitness</option>
+						<option value="Bike">Entertainment</option>
+						<option value="Bike">Dining</option>
+						<option value="Bike">Shopping</option>
+						<option value="Bike">Sports</option>
+					</optgroup>
+				</select>	
+				</li>
+			</fieldset>
+			<input type="submit" value="SAVE NOTE" /> <!-- submit button -->
+			<a href="#">Clear Info</a>
+			</form> <!-- end main form -->
+		</div> <!-- end content div -->
+	</div> <!-- end wrapper div -->
 </body>
 
 </html>
