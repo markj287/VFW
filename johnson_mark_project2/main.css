@@ -1,0 +1,38 @@
+/*Notebud styles*/
+* {
+	margin: 0;
+	padding: 0;
+}  /* universal reset */
+
+body {
+	background:#EB540A; /* fall back option */
+  	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EB540A), to(#FF6600)); /* Safari 4-5, Chrome 1-9 */
+  	background: -webkit-linear-gradient(top,#EB540A,#FF6600); /* Safari 5.1, Chrome 10+ */
+  	background:	-moz-linear-gradient(top,#EB540A,#FF6600); 	/* Firefox 3.6+ */  
+  	background: -ms-linear-gradient(top,#EB540A,#FF6600); /* IE 10 */ 
+  	background: -o-linear-gradient(top,#EB540A,#FF6600); /* Opera 11.10+ */
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	color: #fff;
+}
+
+h1 {
+	margin: 0 110px 10px;
+	color: #fff;
+}
+
+header {
+	background-color: #423E3C;
+}
+
+fieldset {
+	padding: 0 0 0 15px;
+}
+
+li {
+	list-style: none;
+	padding: 10px 0 0 0;
+}
+
+label {
+	display: block;
+}
