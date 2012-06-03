@@ -5,12 +5,14 @@
 }  /* universal reset */
 
 body {
-	background:#EB540A; /* fall back option */
-  	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EB540A), to(#FF6600)); /* Safari 4-5, Chrome 1-9 */
-  	background: -webkit-linear-gradient(top,#EB540A,#FF6600); /* Safari 5.1, Chrome 10+ */
-  	background:	-moz-linear-gradient(top,#EB540A,#FF6600); 	/* Firefox 3.6+ */  
-  	background: -ms-linear-gradient(top,#EB540A,#FF6600); /* IE 10 */ 
-  	background: -o-linear-gradient(top,#EB540A,#FF6600); /* Opera 11.10+ */
+	width: auto;
+	height: 580px;
+	background: #EB540A;  /*fall back option */
+  	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#377AC4), to(#1a82f7)); /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-linear-gradient(top, #1a82f7, #377AC4);  /*Safari 5.1, Chrome 10+ */  
+  	background: -moz-linear-gradient(top, #1a82f7, #377AC4); /* Firefox 3.6+ */
+  	background: -ms-linear-gradient(top, #1a82f7, #377AC4); /* IE 10 */
+  	background: -o-linear-gradient(top, #1a82f7, #377AC4); /* Opera 11.10+ */
 	font-family: Arial, "MS Trebuchet", sans-serif;
 	color: #fff;
 }
@@ -25,7 +27,11 @@ header {
 }
 
 fieldset {
-	padding: 0 0 0 15px;
+	padding: 0 0 10px 15px;
+}
+
+#fnote {
+	display: inline;
 }
 
 li {
@@ -35,4 +41,8 @@ li {
 
 label {
 	display: block;
+}
+
+p {
+	margin: 0 0 0 5px;
 }

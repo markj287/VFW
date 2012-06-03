@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<!-- Mark Johnson Visual Frameworks 01 Project 1 -->
+<!-- Mark Johnson Visual Frameworks 01 Project 2 -->
 <html>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="My first web app" />
 		<meta name="author" content="Mark Johnson" />
 		<meta name="keywords" content="notes, ios, android, web, apps, bud" />
-		<meta name="viewport" content="initial-scale=1.0, width=device-width" /> <!-- makes this site scalable to iphone sreen size -->
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		<meta name="viewport" content="target-densitydpi=device-dpi" /> <!-- tells devlopers what screen resolutions are for -->
+		<meta name="HandheldFriendly" content="True" /> <!-- allows aloder mobile browsers to view without scaling -->
+		<meta name="MobileOptimized" content= "320" />
 		<meta name="robots" content="noindex, nofollow" />
 		<link href="main.css" type="text/css" rel="stylesheet" />
 		<title>Notebud</title>
@@ -18,9 +21,12 @@
 	</header>
 	
 	<p>A very sleek note taking app for iOS and Android</p>
-	
-	<a href="addnote.html">New Note</a>
 
+	<input class="buttons" type="button" value="Sign In" onclick="location.href='signin.html'; return false;" />
+	<input class="buttons" type="button" value="Sign Up" onclick="location.href='signup.html'; return false;" />
+	<input class="buttons" type="button" value="Just Note" onclick="location.href='addnote.html'; return false;" />
+	
+	<script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
