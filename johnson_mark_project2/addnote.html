@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <!-- Mark Johnson Visual Frameworks 01 Project 1 -->
 <html>
-	<head>
-	
+	<head>	
 		<meta charset="UTF-8" />
 		<meta name="description" content="A sleek note taking app" />
 		<meta name="keywords" content="notes, bud, ios, android" />
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<meta name="robots" content="noindex, nofollow" />
-		<link href="main.css" type="text/css" rel="stylesheet" /><!-- css link for project 2 -->
-		<title>New Note</title>
-		
+		<link href="main.css" type="text/css" rel="stylesheet" />
+		<title>New Note</title>		
 	</head>
 
 <body>
@@ -19,10 +17,11 @@
 		<header>
 			<h1>New Note</h1>
 		</header>
-			<form action>
-			<fieldset>
-				<!--<legend>Add Information Below</legend>-->
-				<ul>
+			<form action="#" method="post" id="contactForm" />
+			<fieldset id="newNoteField">
+				<ul id="errors"></ul>
+				<ul id="noteInfo">
+					<li id="select"><label for="group">Add to Notes</label></li>
 					<li><label for="notetitle" class="fnote">Title</label><input type="text" id="notetitle" /></li>
 					<li><label for="noteinfo" class="fnote">Note</label><textarea id="noteinfo"></textarea></li>
 					<li><input type="hidden" value="true" /></li>
