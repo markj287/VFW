@@ -7,7 +7,7 @@
 		<meta name="keywords" content="notes, bud, ios, android" />
 		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<meta name="robots" content="noindex, nofollow" />
-		<link href="main.css" type="text/css" rel="stylesheet" />
+		<link href="main.css" type="text/css" rel="stylesheet" /> <!--media="only screen and(max-width: 485px)"-->
 		<title>New Note</title>		
 	</head>
 
@@ -26,7 +26,7 @@
 					<li><label for="noteinfo" class="fnote">Note</label><textarea id="noteinfo"></textarea></li>
 					<li><input type="hidden" value="true" /></li>
 					<li><label for="date" class="fnote">Date</label><input type="date" id="date" /></li>
-					<li><label for="items" class="fnote">Number of items</label><input type="range" id="items" /></li>
+					<li><label for="items" class="fnote">Number of items</label><input type="range" min="0" max="20" id="items" /></li>
 					<li><label for="attach" class="fnote">Attach a File</label><input type="file" id="attach" /></li>
 						<li>Favorite Note
 						<ul>
@@ -34,10 +34,10 @@
 						</ul>
 						</li>
 				</ul>
-				<li><label for="categor" >Category</label>
-				<select id="category">
+				<li><label for="category" >Category</label>
+				<select id="categories">
 					<optgroup label="Options">
-						<option value="Choose">Choose</option>
+						<option value="Choose:">Choose:</option>
 						<option value="Grocery">Grocery</option>
 						<option value="Fitness">Fitness</option>
 						<option value="Entertainment">Entertainment</option>
@@ -48,8 +48,9 @@
 				</select>	
 				</li>
 			</fieldset>
-			<input type="submit" value="SAVE NOTE" /> <!-- submit button -->
-			<a href="#">Clear Info</a>
+			<input type="submit" value="SAVE NOTE" id="submit" />
+			<a href="#" id="clear">Clear Info</a>
+			<a href="#" id="displayLink">Display Info</a>
 			</form> <!-- end main form -->
 		</div> <!-- end content div -->
 	</div> <!-- end wrapper div -->
