@@ -4,9 +4,11 @@
 	padding: 0;
 }  /* universal reset */
 
-body {
-	width: auto;
-	height: 580px;
+#content {
+	margin: 0 auto;
+	width: 380px;
+	height: 480px;
+	overflow: auto;
 	background: #EB540A;  /*fall back option */
   	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#377AC4), to(#1a82f7)); /* Safari 4-5, Chrome 1-9 */
     background: -webkit-linear-gradient(top, #1a82f7, #377AC4);  /*Safari 5.1, Chrome 10+ */  
@@ -15,6 +17,26 @@ body {
   	background: -o-linear-gradient(top, #1a82f7, #377AC4); /* Opera 11.10+ */
 	font-family: Arial, "MS Trebuchet", sans-serif;
 	color: #fff;
+}
+
+#fnote {
+	display: block;
+}
+
+.buttons {
+	width: 280px;
+	height :35px;
+	margin: 20px 50px 0 50px;
+	border: none;
+	color: #fff;
+	font-size: larger;
+	background: #EB540A;  /*fall back option */
+	-webkit-border-radius: 7px;
+  	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#848484), to(#fff)); /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-linear-gradient(top, #fff, #848484);  /*Safari 5.1, Chrome 10+ */  
+  	background: -moz-linear-gradient(top, #fff, #848484); /* Firefox 3.6+ */
+  	background: -ms-linear-gradient(top, #fff, #848484); /* IE 10 */
+  	background: -o-linear-gradient(top, #fff, #848484); /* Opera 11.10+ */
 }
 
 h1 {
@@ -28,10 +50,7 @@ header {
 
 fieldset {
 	padding: 0 0 10px 15px;
-}
-
-#fnote {
-	display: inline;
+	border: none;
 }
 
 li {
@@ -39,10 +58,15 @@ li {
 	padding: 10px 0 0 0;
 }
 
-label {
-	display: block;
-}
+
 
 p {
 	margin: 0 0 0 5px;
 }
+
+
+
+
+
+
+

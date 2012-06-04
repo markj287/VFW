@@ -19,20 +19,19 @@
 		<header>
 			<h1>New Note</h1>
 		</header>
-			<form>
+			<form action>
 			<fieldset>
 				<!--<legend>Add Information Below</legend>-->
 				<ul>
-					<li><label for="notetitle">Title</label><input type="text" id="notetitle" /></li>
-					<li><label for="noteinfo">Note</label><textarea id="noteinfo"></textarea></li>
+					<li><label for="notetitle" class="fnote">Title</label><input type="text" id="notetitle" /></li>
+					<li><label for="noteinfo" class="fnote">Note</label><textarea id="noteinfo"></textarea></li>
 					<li><input type="hidden" value="true" /></li>
-					<li><label for="date">Date</label><input type="date" id="date" /></li>
-					<li><label for="items">Number of items</label><input type="range" id="items" /></li>
-					<li><label for="attach">Attach a File</label><input type="file" id="attach" /></li>
+					<li><label for="date" class="fnote">Date</label><input type="date" id="date" /></li>
+					<li><label for="items" class="fnote">Number of items</label><input type="range" id="items" /></li>
+					<li><label for="attach" class="fnote">Attach a File</label><input type="file" id="attach" /></li>
 						<li>Favorite Note
-						<ul class="fnote">
+						<ul>
 							<li><input type="radio" value="Yes" id="male" name="Yes" /><label for="yes" >Yes</label></li>
-							<li><input type="radio" value="No" id="female" name="No" /><label for="no" >No</label></li>
 						</ul>
 						</li>
 				</ul>
