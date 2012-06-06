@@ -48,9 +48,10 @@ window.addEventListener("DOMContentLoaded", function (){
 				$('displayLink').style.display = "none"
 				break
 			case "off":
-				$('noteForm').style.display = "none"
+				$('noteForm').style.display = "block"
 				$('clear').style.display = "inline"
 				$('displayLink').style.display = "inline"
+				$('items').style.display = "none"
 				break
 			default:
 				return false
@@ -80,11 +81,13 @@ window.addEventListener("DOMContentLoaded", function (){
 	} // end store data function
 
 	function getNotes() {
+		toggleControls("on")
 		var makeDiv = document.createElement('div')
 		makeDiv.setAttribute("id", "items")
 		var createList = document.createElement('ul')
 		makeDiv.appendChild(createList) // puts createList into ul element created above 
 		document.body.appendChild(makeDiv) // attach makeDiv to the document 
+		$('items').style.display = "block"
 		for(i=0, entries=localStorage.length; i<entries; i++) {
 			var createLi = document.createElement('li')
 			createList.appendChild(createLi)
