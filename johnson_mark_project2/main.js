@@ -40,6 +40,23 @@ window.addEventListener("DOMContentLoaded", function (){
 		}
 	} // end function
 
+	function toggleControls(a) {
+		switch(a){
+			case "on":
+				$('noteForm').style.display = "none"
+				$('clear').style.display = "inline"
+				$('displayLink').style.display = "none"
+				break
+			case "off":
+				$('noteForm').style.display = "none"
+				$('clear').style.display = "inline"
+				$('displayLink').style.display = "inline"
+				break
+			default:
+				return false
+		}
+	}
+
 	function saveNotes() {
 		var id 					= Math.floor(Math.random()*1000001)
 		// gather up all form fields values and store them in an object 
