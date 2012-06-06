@@ -2,7 +2,6 @@
 
 // Wait until the DOM is ready 
 window.addEventListener("DOMContentLoaded", function (){
-	alert(localStorage.value(0))
 	// getElementById function
 	function $(x) {
 		var theElement = document.getElementById(x)
@@ -19,7 +18,7 @@ window.addEventListener("DOMContentLoaded", function (){
 			var optionText = notesCategories[i]
 			makeOption.setAttribute("value", "optionText")
 			makeOption.innerHTML = optionText
-			makeOption.appendChild(makeOption)
+			makeSelect.appendChild(makeOption)
 		} // end for loop
 		selectListItem.appendChild(makeSelect)
 	} // end makeCat function
@@ -62,6 +61,20 @@ window.addEventListener("DOMContentLoaded", function (){
 			
 			alert("Note Saved")
 	} // end store data function
+
+	function getNotes() {
+		var makeDiv = document.createElement('div')
+		makeDiv.setAttribute("id", "items")
+		var createList = document.createElement('ul')
+		makeDiv.appendChild(createList) // puts createList into ul element created above 
+		for(i=0, entries=localStorage.length; i<entries; i++) {
+			var createLi = document.createElement('li')
+			createList.appendChild(createLi)
+			var key = localStorage.key(i)
+			var value = localStorage.getItem(key)
+			var savedNote = JSON.parse(value) // parse the save note object back into an object 
+		}
+	}
 
 	// Variables defaults 
 	var notesCategories = ["--Choose a Category--","Grocery","Fitness","Entertainment","Dining","Shopping","Sports"],
