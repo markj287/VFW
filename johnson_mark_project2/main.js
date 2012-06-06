@@ -24,9 +24,32 @@ window.addEventListener("DOMContentLoaded", function (){
 		selectListItem.appendChild(makeSelect)
 	} // end makeCat function
 
+	function saveNotes() {
+		var id 					= Math.floor(Math.random()*1000001)
+		// gather up all form fields values and store them in an object 
+		// object properites will contain an array with form labels and input values 
+
+		getSelectedRadioBtn() // calls function
+		getcheckedBoxBtn()
+		var item 				= {}
+			item.group 			= ["Group", $('groups').value ]
+			item.notetitle 		= ["Title", $('notetitle').value ]
+			item.noteinfo		= ["Note", $('noteinfo').value ]
+			item.date			= ["Date", $('date').value ]
+			item.items			= ["Number of Itmes", $('items').value ]
+			item.attach			= ["Attach a File", $('attach').value ]
+			item.favorite		= ["Favorite Note", favoriteValue ]
+
+			// save data into local storage. Use stringify to convert our object to a string 
+			localStorage.setItem(id, JSON.stringify(item))
+			
+			alert("Note Saved")
+	} // end store data function
+
 	// Variables defaults 
 	var notesCategories = ["--Choose a Category--","Grocery","Fitness","Entertainment","Dining","Shopping","Sports"]
 	makeCats()
+	
 
 
 	// Set links and submits click events 
@@ -38,5 +61,5 @@ window.addEventListener("DOMContentLoaded", function (){
 	save.addEventListener("click", saveNotes)
 
 
-})
+}) // end main function
 
