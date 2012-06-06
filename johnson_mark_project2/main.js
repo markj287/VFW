@@ -2,7 +2,7 @@
 
 // Wait until the DOM is ready 
 window.addEventListener("DOMContentLoaded", function (){
-
+	alert(localStorage.value(0))
 	// getElementById function
 	function $(x) {
 		var theElement = document.getElementById(x)
@@ -23,6 +23,23 @@ window.addEventListener("DOMContentLoaded", function (){
 		} // end for loop
 		selectListItem.appendChild(makeSelect)
 	} // end makeCat function
+
+	function getSelectedRadioBtn() {
+		var radio = document.forms[0].favNote 
+		for (var i=0; i<radio.length; i++) {
+			if(radio[i].checked) {
+				favoriteValue = radio[i].value
+			} // end if
+		} // end for loop
+	} // end get selected radio btn function
+
+	function getcheckedBoxBtn() {
+		if($('fav').checked) {
+			favoriteValue = $('fav').value
+		} else {
+			favoriteValue = "No"
+		}
+	} // end function
 
 	function saveNotes() {
 		var id 					= Math.floor(Math.random()*1000001)
@@ -47,7 +64,9 @@ window.addEventListener("DOMContentLoaded", function (){
 	} // end store data function
 
 	// Variables defaults 
-	var notesCategories = ["--Choose a Category--","Grocery","Fitness","Entertainment","Dining","Shopping","Sports"]
+	var notesCategories = ["--Choose a Category--","Grocery","Fitness","Entertainment","Dining","Shopping","Sports"],
+		favoriteValue = "No"
+		;
 	makeCats()
 	
 
