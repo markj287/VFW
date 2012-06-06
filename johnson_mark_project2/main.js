@@ -67,14 +67,23 @@ window.addEventListener("DOMContentLoaded", function (){
 		makeDiv.setAttribute("id", "items")
 		var createList = document.createElement('ul')
 		makeDiv.appendChild(createList) // puts createList into ul element created above 
+		document.body.appendChild(makeDiv) // attach makeDiv to the document 
 		for(i=0, entries=localStorage.length; i<entries; i++) {
 			var createLi = document.createElement('li')
 			createList.appendChild(createLi)
 			var key = localStorage.key(i)
 			var value = localStorage.getItem(key)
 			var savedNote = JSON.parse(value) // parse the save note object back into an object 
-		}
-	}
+			var createSubList = document.createElement('ul')
+			var createLi.appendChild(createSubList)
+			for(a in savedNote) {
+				var creatSubListItem = document.createElement('li')
+				createSubList.appendChild(creatSubListItem)
+				var subText = savedNote[a][0] + " " + savedNote[a][1]
+				creatSubListItem.innerHTML = subText
+			} // end for in loop
+		} // end for loop
+	} // end getNotes function
 
 	// Variables defaults 
 	var notesCategories = ["--Choose a Category--","Grocery","Fitness","Entertainment","Dining","Shopping","Sports"],
