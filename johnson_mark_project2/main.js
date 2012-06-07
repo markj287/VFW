@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function (){
 			selectListItem = $('select'),
 			makeSelect = document.createElement('select')
 			makeSelect.setAttribute("id", "groups");
-		for(var i=0, j=notesCategories; i<j; i++) {
+		for(var i=0, j=notesCategories.length; i<j; i++) {
 			var makeOption = document.createElement('option');
 			var optionText = notesCategories[i]
 			makeOption.setAttribute("value", "optionText");
@@ -95,7 +95,7 @@ window.addEventListener("DOMContentLoaded", function (){
 			var value = localStorage.getItem(key);
 			var savedNote = JSON.parse(value); // parse the save note object back into an object 
 			var createSubList = document.createElement('ul');
-			var createLi.appendChild(createSubList),
+			createLi.appendChild(createSubList);
 			for(a in savedNote) {
 				var creatSubListItem = document.createElement('li');
 				createSubList.appendChild(creatSubListItem)
