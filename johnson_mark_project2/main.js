@@ -1,5 +1,3 @@
-
-
 // Wait until the DOM is ready 
 window.addEventListener("DOMContentLoaded", function (){
 	// getElementById function
@@ -7,6 +5,9 @@ window.addEventListener("DOMContentLoaded", function (){
 		var theElement = document.getElementById(x);
 		return theElement;
 	} // end theElement function
+
+
+
 
 	function makeCats () {
 		var formTag = document.getElementsByTagName("form"), // form tag is an array
@@ -23,6 +24,10 @@ window.addEventListener("DOMContentLoaded", function (){
 		selectListItem.appendChild(makeSelect);
 	} // end makeCat function
 
+
+
+
+
 	function getSelectedRadioBtn() {
 		var radio = document.forms[0].favNote 
 		for (var i=0; i<radio.length; i++) {
@@ -32,6 +37,9 @@ window.addEventListener("DOMContentLoaded", function (){
 		} // end for loop
 	} // end get selected radio btn function
 
+
+
+
 	function getcheckedBoxBtn() {
 		if($('fav').checked) {
 			favoriteValue = $('fav').value;
@@ -39,6 +47,11 @@ window.addEventListener("DOMContentLoaded", function (){
 			favoriteValue = "No"
 		}
 	} // end function
+
+
+
+
+
 
 	function toggleControls(a) {
 		switch(a){
@@ -55,13 +68,18 @@ window.addEventListener("DOMContentLoaded", function (){
 			default:
 				return false;
 		}
-	}
+	} // end toggleControls function
+
+
+
+
+
+
 
 	function saveNotes() {
 		var id 					= Math.floor(Math.random()*1000001);
 		// gather up all form fields values and store them in an object 
 		// object properites will contain an array with form labels and input values 
-
 		getSelectedRadioBtn(); // calls function
 		getcheckedBoxBtn();
 		var item 				= {}
@@ -74,10 +92,13 @@ window.addEventListener("DOMContentLoaded", function (){
 			item.favorite		= ["Favorite Note", favoriteValue ];
 
 			// save data into local storage. Use stringify to convert our object to a string 
-			localStorage.setItem(id, JSON.stringify(item));
-			
+			localStorage.setItem(id, JSON.stringify(item));			
 			alert("Note Saved");
 	} // end store data function
+
+
+
+
 
 	function getNotes() {
 		toggleControls("on");
@@ -105,6 +126,8 @@ window.addEventListener("DOMContentLoaded", function (){
 	} // end getNotes function
 
 
+
+
 	function clearNotes() {
 		if(localStorage.length === 0){
 			alert("Move along buddy, nothing here to clear.");
@@ -116,6 +139,8 @@ window.addEventListener("DOMContentLoaded", function (){
 		} // end if 
 	} // end clearNotes function
 	
+
+
 
 	// Variables defaults 
 	var notesCategories = ["--Choose a Category--","Grocery","Fitness","Entertainment","Dining","Shopping","Sports"],
