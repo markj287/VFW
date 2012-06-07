@@ -46,13 +46,12 @@ window.addEventListener("DOMContentLoaded", function (){
 				$('noteForm').style.display = "none"
 				$('clear').style.display = "inline"
 				$('displayLink').style.display = "none"
-				break
+				break;
 			case "off":
 				$('noteForm').style.display = "block"
 				$('clear').style.display = "inline"
 				$('displayLink').style.display = "inline"
-				$('items').style.display = "none"
-				break
+				break;
 			default:
 				return false;
 		}
@@ -111,7 +110,7 @@ window.addEventListener("DOMContentLoaded", function (){
 			alert("Move along buddy, nothing here to clear.");
 		} else {
 			localStorage.clear()
-			alert("All notes are deleted");
+			alert("All notes were deleted");
 			window.location.reload();
 			return false;
 		} // end if 
