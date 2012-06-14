@@ -1,0 +1,93 @@
+/*Notebud styles*/
+* {
+	margin: 0;
+	padding: 0;
+}  /* universal reset */
+
+#content {
+	margin: 0 auto;
+	width: 320px;
+	height: 480px;
+	overflow: auto;
+	background: #EB540A;  /*fall back option */
+  	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#377AC4), to(#1a82f7)); /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-linear-gradient(top, #1a82f7, #377AC4);  /*Safari 5.1, Chrome 10+ */  
+  	background: -moz-linear-gradient(top, #1a82f7, #377AC4); /* Firefox 3.6+ */
+  	background: -ms-linear-gradient(top, #1a82f7, #377AC4); /* IE 10 */
+  	background: -o-linear-gradient(top, #1a82f7, #377AC4); /* Opera 11.10+ */
+	font-family: Arial, "MS Trebuchet", sans-serif;
+	color: #fff;
+}
+
+#addNote {
+	display: none;
+}
+
+.buttons {
+	width: 260px;
+	height :45px;
+	margin: 20px 10px 0 30px;
+	border: none;
+	color: #fff;
+	font-size: larger;
+	background: #EB540A;  /*fall back option */
+	-webkit-border-radius: 7px;
+  	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#423E3C), to(#7c7c7d)); /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-linear-gradient(top, #7c7c7d, #423E3C);  /*Safari 5.1, Chrome 10+ */  
+  	background: -moz-linear-gradient(top, #7c7c7d, #423E3C); /* Firefox 3.6+ */
+  	background: -ms-linear-gradient(top, #7c7c7d, #423E3C); /* IE 10 */
+  	background: -o-linear-gradient(top, #7c7c7d, #423E3C); /* Opera 11.10+ */
+}
+
+header {
+	background-color: #423E3C;
+}
+
+label {
+	display: block;
+}
+
+fieldset {
+	padding: 0 0 10px 15px;
+	border: none;
+}
+
+h2 {
+	margin: 0 110px 20px;
+	color: #fff;
+}
+
+
+h3 {
+	margin: 0 100px 20px;
+	color: #fff;
+}
+
+
+li {
+	list-style: none;
+	padding: 10px 0 0 0;
+}
+
+p {
+	margin: 0 0 0 9px;
+}
+
+a {
+	text-decoration: none;
+	margin: 3px;
+}
+
+a:active {
+	text-decoration: none;
+	color: #fff;
+}
+
+a:visited {
+	color: blue;
+}
+
+
+
+
+
