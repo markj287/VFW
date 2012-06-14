@@ -82,8 +82,12 @@ window.addEventListener("DOMContentLoaded", function (){
 
 
 
-	function saveNotes() {
-		var id 					= Math.floor(Math.random()*1000001);
+	function saveNotes(key){
+		if(!key){
+			var id 					= Math.floor(Math.random()*1000001);
+		}else{
+			id = key;
+		}
 		// gather up all form fields values and store them in an object 
 		// object properites will contain an array with form labels and input values 
 		getSelectedRadioBtn(); // calls function
@@ -150,14 +154,12 @@ window.addEventListener("DOMContentLoaded", function (){
 		editLink.innerHTML = editNote;
 		linksList.appendChild(editLink);
 
-		//var breakTag = document.createElement("br");
-		//linksList.appendChild(breakTag);
 
 		deleteLink = document.createElement('a');
 		deleteLink.href="#";
 		deleteLink.key = key;
 		var deleteNote = "Delete Note";
-		//deleteLink.addEventListener("click", deleteItem);
+		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteNote;
 		linksList.appendChild(deleteLink);
 	} // end makeListLinks function
@@ -181,9 +183,25 @@ window.addEventListener("DOMContentLoaded", function (){
 			$('fav').setAttribute("checked", "checked");
 		}
 
-		save.removeEventListener("click", saveNotes);
+		save.removeEventListener("click", saveNotes); //change save button state 
+		$('submit').value = "Edit Note";
+		var editSubmit = $('submit');
+		editSubmit.addEventListener("click", validate);
+		editSubmit.key = this.key;
 
 	} // end edit Links function 
+
+
+	function deleteItem(){
+		var askUser = confirm("Delete note!");
+		if(askUser){
+			localStorage.removeItem(this.key);
+			alert("Note was deleted!")
+			window.location.reload();
+		}else {
+			alert("Note not deleted!");
+		}
+	} // end delete item function
 
 
 
@@ -199,11 +217,67 @@ window.addEventListener("DOMContentLoaded", function (){
 	} // end clearNotes function
 	
 
+	function validate(e) {
+		// elements we want to check if user filled in 
+		var getGroup = $('groups');
+		var	getNotetitle = $('notetitle');
+		var	getNoteinfo = $('noteinfo');
+
+		errorMessage.innerHTML = "";
+		/*getGroup.style.border = "2px solid black";
+		getNotetitle.style.border = "2px solid black";
+		getNoteinfo.style.border = "2px solid black";
+		*/
+			//check for in category errors 
+			var errorsArray = [];
+			if(getGroup.value === "--Choose a Category--"){
+				var groupError = "Please choose a group!";
+				getGroup.style.border = "2px solid red";
+				errorsArray.push(groupError);
+			}
+
+			// check note title for errors 
+			if(getNotetitle.value === ""){
+				var noteTitleError = "Please write a title!";
+				getNotetitle.style.border = "2px solid red";
+				errorsArray.push(noteTitleError);
+			}
+
+			// check note info for errors 
+			if(getNoteinfo.value === ""){
+				var noteInfoError = "Please write some notes!";
+				getNoteinfo.style.border = "2px solid red";
+				errorsArray.push(noteInfoError);
+			}
+
+			// check for email validation. My app doesn't require an email but i want to find out how to validate an email so i will comment out this part 
+			/*var regEx = /^\w+([\.-]?\w+)*@\w([\.-]?\w+)*(\.\w{2,3})+$/;
+			if(!(regEx.exec(getEmail.value))){
+				var emailError = "Please enter a valid email address!";
+				getEmail.style.border = "1px solid red";
+				errorsArray.push(emailError);
+			}*/
+
+			// display errors on the screen
+			if(errorsArray.length >=1){
+				for(var i=0, j=errorsArray.length; i<j; i++){
+					var txt = document.createElement('li');
+					txt.innerHTML = errorsArray[i];
+					errorMessage.appendChild(txt); // get element errors id then put the tex var in the ul 
+				}
+				e.preventDefault();
+				return false;
+			}else{
+					saveNotes(this.key);
+				}
+	} // end validate function
+
 
 
 	// Variables defaults 
 	var notesCategories = ["--Choose a Category--","Grocery","Fitness","Entertainment","Dining","Shopping","Sports"],
-		favoriteValue = "No"
+		favoriteValue = "No",
+		errorMessage = $('errors');
 		;
 	makeCats();
 
@@ -214,7 +288,7 @@ window.addEventListener("DOMContentLoaded", function (){
 	var clearLink = $('clear');
 	clearLink.addEventListener("click", clearNotes);
 	var save = $('submit');
-	save.addEventListener("click", saveNotes);
+	save.addEventListener("click", validate);
 
 
 }) // end main function
