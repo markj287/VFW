@@ -113,7 +113,8 @@ window.addEventListener("DOMContentLoaded", function (){
 	function getNotes() {
 		toggleControls("on");
 		if(localStorage.length === 0){
-			alert("There is no data here!")
+			alert("There is no data here! JSON data was added.")
+			autoFillData();
 		};
 
 		var makeDiv = document.createElement('div');
@@ -142,6 +143,13 @@ window.addEventListener("DOMContentLoaded", function (){
 		} // end for loop
 	} // end getNotes function
 
+	//auto populate our form because we are lazy
+	function autoFillData(){
+		for(var n in json){
+			var id = Math.floor(Math.random()*1000001);
+			localStorage.setItem(id, JSON.stringify(json[n]));
+		}
+	}
 
 
 
