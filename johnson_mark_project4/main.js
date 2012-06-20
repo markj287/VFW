@@ -107,13 +107,21 @@ window.addEventListener("DOMContentLoaded", function (){
 	} // end store data function
 
 
+	// get the right images for each item in our data 
+	function getImage(catName, makeSubList){
+		var imageList = document.createElement('li');
+		makeSubList.appendChild(imageList);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src","images/"+ catName + ".png)";
+		imageList.appendChild(newImg);
+	} // end get image function
 
 
 
 	function getNotes() {
 		toggleControls("on");
 		if(localStorage.length === 0){
-			alert("There is no data here! JSON data was added.")
+			alert("There is no data here! JSON data will be added as default.")
 			autoFillData();
 		};
 

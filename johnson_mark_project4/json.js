@@ -1,3 +1,7 @@
+//json object
+//Mark Johnson
+// This will populate our form so we can have easy access to local storage data. Quite frankly am lazy.
+
 var json = {
 	"note1": = {
 		"group": ["Groups:", "Entertainment"],
