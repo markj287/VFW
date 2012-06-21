@@ -107,16 +107,6 @@ window.addEventListener("DOMContentLoaded", function (){
 	} // end store data function
 
 
-	// get the right images for each item in our data 
-	function getImage(catName, makeSubList){
-		var imageList = document.createElement('li');
-		makeSubList.appendChild(imageList);
-		var newImg = document.createElement('img');
-		var setSrc = newImg.setAttribute("src","images/"+ catName + ".png)";
-		imageList.appendChild(newImg);
-	} // end get image function
-
-
 
 	function getNotes() {
 		toggleControls("on");
@@ -140,16 +130,35 @@ window.addEventListener("DOMContentLoaded", function (){
 			var savedNote = JSON.parse(value); // parse the save note object back into an object 
 			var createSubList = document.createElement('ul');
 			createLi.appendChild(createSubList);
-			for(a in savedNote) {
+			getImage(savedNote.groups[1],createSubList);
+			for(var a in savedNote) {
 				var creatSubListItem = document.createElement('li');
 				createSubList.appendChild(creatSubListItem)
-				var subText = savedNote[a][0] + " " + savedNote[a][1];
+				var subText = savedNote[a][1] + " " + savedNote[a][1];
 				creatSubListItem.innerHTML = subText;
 				createSubList.appendChild(linksList);
 			} // end for in loop
 			makeItemLinks(localStorage.key(i), linksList); // calls function that will add buttons. 
 		} // end for loop
 	} // end getNotes function
+
+
+
+
+	
+	//get the right images for each item in our data 
+	function getImage(catName, createSubList){
+		var imageList = document.createElement('li');
+		createSubList.appendChild(imageList);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src","images/"+ catName + ".png");
+		imageList.appendChild(newImg); //append child method attach image to screen
+	} // end get image function
+
+
+
+
+
 
 	//auto populate our form because we are lazy
 	function autoFillData(){
